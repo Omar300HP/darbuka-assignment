@@ -1,0 +1,19 @@
+{
+  "private": true,
+  "workspaces": [
+    "server",
+    "client"
+  ],
+  "scripts": {
+    "prettier-all": "prettier --write \"**/*{ts,js,css,html,jsx,tsx}\"",
+    "dev": "concurrently --kill-others-on-fail \"yarn dev:server\"  \"yarn dev:client\"",
+    "dev:client": "yarn workspace client dev",
+    "dev:server": "yarn workspace server dev",
+    "server": "yarn workspace server server"
+  },
+  "devDependencies": {
+    "concurrently": "^5.2.0",
+    "dotenv": "^16.4.5",
+    "prettier": "2.8.2"
+  }
+}
