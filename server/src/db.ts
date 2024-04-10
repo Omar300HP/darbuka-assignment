@@ -4,8 +4,11 @@ let connected = false;
 const connect = async () => {
   try {
     if (connected) return;
-    console.log('Connecting to mongoDB...', process.env.MONGO_URI);
-    const con = await mongoose.connect('mongodb://db:27017');
+    console.log('Connecting to mongoDB...', process.env.DATABASE_URL);
+    if (!process.env.DATABASE_URL) {
+      throw new Error();
+    }
+    const con = await mongoose.connect(process.env.DATABASE_URL);
     // mongoose.set('debug', (process.env.NODE_ENV || "").toLowerCase() !== 'production');
     connected = true;
 

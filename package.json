@@ -9,7 +9,8 @@
     "dev": "concurrently --kill-others-on-fail \"yarn dev:server\"  \"yarn dev:client\"",
     "dev:client": "yarn workspace client dev",
     "dev:server": "yarn workspace server dev",
-    "server": "yarn workspace server server"
+    "server": "yarn workspace server server",
+    "docker": "yarn workspace server docker"
   },
   "devDependencies": {
     "concurrently": "^5.2.0",

@@ -1,4 +1,8 @@
 import express, { Request, Response } from 'express';
+import { config } from 'dotenv';
+
+config({ path: process.env.DOTENV_CONFIG_PATH });
+
 import * as bodyParser from 'body-parser';
 // import cors from "cors";
 import connectDB from './db';
