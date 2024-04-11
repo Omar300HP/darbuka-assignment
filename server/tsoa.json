@@ -1,0 +1,38 @@
+{
+  "entryFile": "src/app/app.ts",
+  "noImplicitAdditionalProperties": "throw-on-extras",
+  "controllerPathGlobs": ["src/features/**/*.controller.ts"],
+  "spec": {
+    "outputDirectory": "docs",
+    "specVersion": 3,
+    "specMerging": "recursive",
+    "components": {
+      "securitySchemes": {
+        "jwt_auth": {
+          "type": "http",
+          "scheme": "bearer",
+          "bearerFormat": "JWT"
+        }
+      }
+    },
+    "servers": [
+      {
+        "url": "http://localhost:3000/",
+        "description": "Local development"
+      },
+      {
+        "url": "https://dev.Development server.url/",
+        "description": "Development server"
+      },
+      {
+        "url": "https://dev.Staging server.url/",
+        "description": "Staging server"
+      }
+    ]
+  },
+  "routes": {
+    "routesDir": "src/app",
+    "routesFileName": "routes.ts",
+    "authenticationModule": "./src/common/middlewares/authentication.ts"
+  }
+}

@@ -1,13 +1,19 @@
 {
   "compilerOptions": {
-    "target": "es6",
+    "target": "es2022",
+    "lib": ["ES2022"],
     "module": "commonjs",
-    "outDir": "./dist",
+    "outDir": "./build",
     "strict": true,
     "esModuleInterop": true,
     "skipLibCheck": true,
-    "forceConsistentCasingInFileNames": true
+    "forceConsistentCasingInFileNames": true,
+    "experimentalDecorators": true,
+    "resolveJsonModule": true,
+    "emitDecoratorMetadata": true,
+    "types": ["node", "chai"]
   },
   "include": ["src/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules"],
+  "files": ["src/app/custom.d.ts"]
 }

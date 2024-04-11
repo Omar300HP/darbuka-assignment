@@ -5,6 +5,7 @@
     "client"
   ],
   "scripts": {
+    "routes:generate": "yarn workspace server routes:generate",
     "prettier-all": "prettier --write \"**/*{ts,js,css,html,jsx,tsx}\"",
     "dev": "concurrently --kill-others-on-fail \"yarn dev:server\"  \"yarn dev:client\"",
     "dev:client": "yarn workspace client dev",
