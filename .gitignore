@@ -2,3 +2,10 @@ node_modules
 .idea
 dist
 .eslintcache
+**/*/build/**/*
+
+
+**/*/dist
+
+.env*
+server/build/docs/**/*
