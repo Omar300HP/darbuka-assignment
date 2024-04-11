@@ -9,3 +9,4 @@ dist
 
 .env*
 server/build/docs/**/*
+server/build/docs/swagger.json
