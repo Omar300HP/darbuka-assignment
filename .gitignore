@@ -1,6 +1,7 @@
 node_modules
 .idea
 dist
+build
 .eslintcache
 **/*/build/**/*
 
@@ -10,3 +11,4 @@ dist
 .env*
 server/build/docs/**/*
 server/build/docs/swagger.json
+server/docs/swagger.json

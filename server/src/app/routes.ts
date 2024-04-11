@@ -39,7 +39,7 @@ const models: TsoaRoute.Models = {
             "owner": {"dataType":"string","required":true},
             "createdAt": {"dataType":"datetime","required":true},
             "updatedAt": {"dataType":"datetime","required":true},
-            "sharedWith": {"dataType":"array","array":{"dataType":"string"},"required":true},
+            "sharedWith": {"dataType":"array","array":{"dataType":"string"}},
             "tasks": {"dataType":"array","array":{"dataType":"refObject","ref":"Task"}},
         },
         "additionalProperties": false,
