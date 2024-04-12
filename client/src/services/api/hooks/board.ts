@@ -3,7 +3,8 @@ import { baseApi } from '../base';
 
 export const boardExtendedApi = baseApi.injectEndpoints({
   endpoints: (builder) => ({
-    getBoardList: builder.query<Board[], undefined>({
+    // eslint-disable-next-line @typescript-eslint/no-explicit-any
+    getBoardList: builder.query<Board[], any>({
       query: () => queryDefinitions.listBoard(),
       providesTags: (result) => [
         ...(result?.map((item) => ({

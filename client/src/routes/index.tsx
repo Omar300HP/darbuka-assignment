@@ -20,13 +20,12 @@ export const routes = {
   notFound: { path: '*', nav: () => '*', element: <ErrorPage /> }
 } as const;
 
-const Router: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
+const Router: React.FC = () => (
   <BrowserRouter basename="/">
     <Routes>
       {Object.values(routes).map(({ path, element }) => (
         <Route key={path} path={path} element={element} />
       ))}
-      {children}
     </Routes>
   </BrowserRouter>
 );

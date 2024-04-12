@@ -1,4 +1,4 @@
-import { Layout } from 'antd';
+import { Image, Layout } from 'antd';
 
 const { Header: AdHeader, Content } = Layout;
 
@@ -6,8 +6,15 @@ const Header = ({ children }: { children?: React.ReactNode }): JSX.Element => {
   return (
     <AdHeader
       data-testid="header"
-      className="z-10 flex h-[88px] flex-row items-center rounded-xl border-borderColor border-opacity-30 bg-black  bg-opacity-70 backdrop-blur-xl xs:h-[55px] xs:px-4"
+      className="z-10 flex h-[88px] flex-row justify-center  items-center rounded-xl border-borderColor border-opacity-30 bg-black  bg-opacity-70 backdrop-blur-xl xs:h-[55px] xs:px-4"
     >
+      <Image
+        src={'/logos/darbuka-logo.png'}
+        preview={false}
+        alt="darbuka-logo"
+        className="w-[139px] xs:w-[40px] cursor-pointer"
+      />
+
       {children}
     </AdHeader>
   );

@@ -1,0 +1,15 @@
+.form :global(.ant-form-item) {
+  width: calc(50% - 24px);
+}
+
+.form {
+  @apply flex flex-row flex-wrap gap-y-6 gap-x-6;
+}
+
+.form :global(.ant-menu-selection) {
+  @apply bg-[#5f73a9] !important;
+}
+
+.form :global(.ant-select-selected) {
+  @apply bg-[#5f73a9] !important;
+}

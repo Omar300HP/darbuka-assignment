@@ -21,6 +21,6 @@ interface Board {
   tasks?: Task[];
 }
 
-type BoardCreateInput = Omit<Board, 'id' | 'createdAt' | 'updatedAt'>;
+type BoardCreateInput = Omit<Board, 'id' | 'createdAt' | 'updatedAt' | 'owner'>;
 
 type TaskCreateInput = Omit<Task, 'id' | 'createdAt' | 'updatedAt'>;

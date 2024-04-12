@@ -19,6 +19,7 @@
     "preview": "vite preview"
   },
   "dependencies": {
+    "@ant-design/icons": "^5.3.6",
     "@heroicons/react": "2.0.18",
     "@reduxjs/toolkit": "^2.2.3",
     "@types/react-redux": "^7.1.33",

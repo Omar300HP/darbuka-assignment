@@ -5,8 +5,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/index';
 
 import { selectOpenedModal, clearModal } from '../slices';
 import { GlobalModals } from 'types/enums';
-
-const NewBoardModal = () => <div>NEW_BOARD</div>;
+import { NewBoardModal } from 'features/CreateNewBoard';
 
 const Modals = () => {
   const { pathname } = useLocation();

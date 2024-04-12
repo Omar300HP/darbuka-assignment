@@ -4,9 +4,9 @@
   "license": "MIT",
   "scripts": {
     "routes:generate": "npx tsoa spec-and-routes && npx tsc",
-    "dev": "DOTENV_CONFIG_PATH=.env  nodemon src/index.ts",
-    "start": "DOTENV_CONFIG_PATH=.env  ts-node src/index.ts",
-    "build": "tsc",
+    "dev": "cross-env nodemon src/index.ts",
+    "start": "cross-env ts-node src/index.ts",
+    "build": "cross-env tsc",
     "server": "node build/index.js",
     "docker": "docker compose up"
   },
@@ -16,6 +16,7 @@
     "@types/node": "^20.12.7",
     "@typescript-eslint/eslint-plugin": "^7.6.0",
     "@typescript-eslint/parser": "^7.6.0",
+    "cross-env": "^7.0.3",
     "eslint": "^9.0.0",
     "eslint-config-prettier": "^9.1.0",
     "eslint-plugin-prettier": "^5.1.3",
