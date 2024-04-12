@@ -1,11 +1,14 @@
+import { ThemeProvider } from 'providers/ThemeProvider';
 import ReduxStore from 'providers/store';
 import Router from 'src/routes';
 
 const App = () => {
   return (
-    <ReduxStore>
-      <Router />
-    </ReduxStore>
+    <ThemeProvider>
+      <ReduxStore>
+        <Router />
+      </ReduxStore>
+    </ThemeProvider>
   );
 };
 

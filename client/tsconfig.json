@@ -31,7 +31,8 @@
       "providers/*": ["src/providers/*"],
       "features/*": ["src/features/*"],
       "config/*": ["src/config/*"],
-      "libs/*": ["src/libs/*"]
+      "libs/*": ["src/libs/*"],
+      "assets/*": ["src/assets/*"]
     }
   },
   "include": ["src", "types/**/*.d.ts"],
