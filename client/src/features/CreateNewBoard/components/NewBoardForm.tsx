@@ -33,7 +33,10 @@ const NewBoardForm = ({
       validateTrigger="onSubmit"
     >
       <Form.Item name="name" rules={nameField} label={'Board Name'}>
-        <Input placeholder={'Board Name'} />
+        <Input
+          placeholder={'Board Name'}
+          style={{ backgroundColor: '#141414' }}
+        />
       </Form.Item>
 
       <Form.Item
@@ -41,7 +44,10 @@ const NewBoardForm = ({
         rules={descriptionField}
         label={'Board description'}
       >
-        <Input placeholder={'Board description'} />
+        <Input
+          placeholder={'Board description'}
+          style={{ backgroundColor: '#141414' }}
+        />
       </Form.Item>
 
       <Form.Item className="mt-11 flex w-full justify-center">

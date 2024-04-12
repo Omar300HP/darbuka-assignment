@@ -1,8 +1,19 @@
-import { Request, Controller, Route, Get, Post, Path, Put, Delete } from 'tsoa';
+import {
+  Request,
+  Controller,
+  Route,
+  Get,
+  Post,
+  Path,
+  Put,
+  Delete,
+  Body
+} from 'tsoa';
 import BoardService from './board.service';
 import BoardDAL from '../../DAL/board';
 import { Board, BoardCreateInput } from '../../common/models/board';
 import { Task, TaskCreateInput } from '../../common/models/task';
+import BoardDTO from './board.dto';
 
 @Route('/v1/boards')
 // @Security("jwt_auth")
@@ -49,10 +60,9 @@ export class BoardController extends Controller {
   }
 
   @Post()
-  public async createBoard(@Request() request: any): Promise<Board> {
-    const newBoard: BoardCreateInput = request.body;
-
-    return await this.boardService.createBoard(newBoard);
+  public async createBoard(@Body() body: BoardDTO): Promise<Board> {
+    console.log('newBoard', body);
+    return await this.boardService.createBoard(body);
   }
 
   @Get('/{boardId}')
