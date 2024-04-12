@@ -8,9 +8,8 @@ export const taskExtendedApi = baseApi.injectEndpoints({
       { body: TaskCreateInput; boardId: string }
     >({
       query: ({ body, boardId }) => queryDefinitions.createTask(boardId, body),
-      invalidatesTags: (_result, _error, { taskId, boardId }) => [
-        { type: 'Board', id: boardId },
-        { type: 'Task', id: taskId }
+      invalidatesTags: (_result, _error, { boardId }) => [
+        { type: 'Board', id: boardId }
       ]
     }),
 

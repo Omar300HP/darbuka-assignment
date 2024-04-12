@@ -12,3 +12,4 @@ build
 server/build/docs/**/*
 server/build/docs/swagger.json
 server/docs/swagger.json
+vhost.conf

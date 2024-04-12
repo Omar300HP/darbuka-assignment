@@ -12,7 +12,7 @@ const NewTaskForm = ({
   handleSubmit: (values: {
     boardId: string;
     description: string;
-    title: string;
+    name: string;
   }) => void;
   isLoading: boolean;
 }) => {
