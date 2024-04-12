@@ -18,11 +18,14 @@ export const queryDefinitions = {
     url: appConfig.restApiRoutes.board.list(),
     method: RequestMethods.GET
   }),
-  createBoard: (reqBody: BoardCreateInput) => ({
-    url: appConfig.restApiRoutes.board.create(),
-    method: RequestMethods.POST,
-    body: reqBody
-  }),
+  createBoard: (reqBody: BoardCreateInput) => {
+    console.log({ reqBody });
+    return {
+      url: appConfig.restApiRoutes.board.create(),
+      method: RequestMethods.POST,
+      data: reqBody
+    };
+  },
   getBoardById: (boardId: string) => ({
     url: appConfig.restApiRoutes.board.getById(boardId),
     method: RequestMethods.GET
@@ -30,7 +33,7 @@ export const queryDefinitions = {
   updateBoard: (boardId: string, reqBody: Partial<BoardCreateInput>) => ({
     url: appConfig.restApiRoutes.board.update(boardId),
     method: RequestMethods.PUT,
-    body: reqBody
+    data: reqBody
   }),
   deleteBoard: (boardId: string) => ({
     url: appConfig.restApiRoutes.board.delete(boardId),
@@ -39,7 +42,7 @@ export const queryDefinitions = {
   createTask: (boardId: string, reqBody: TaskCreateInput) => ({
     url: appConfig.restApiRoutes.task.create(boardId),
     method: RequestMethods.POST,
-    body: reqBody
+    data: reqBody
   }),
   getTaskById: (boardId: string, taskId: string) => ({
     url: appConfig.restApiRoutes.task.getById(boardId, taskId),
@@ -52,7 +55,7 @@ export const queryDefinitions = {
   ) => ({
     url: appConfig.restApiRoutes.task.update(boardId, taskId),
     method: RequestMethods.PUT,
-    body: reqBody
+    data: reqBody
   }),
   deleteTask: (boardId: string, taskId: string) => ({
     url: appConfig.restApiRoutes.task.delete(boardId, taskId),

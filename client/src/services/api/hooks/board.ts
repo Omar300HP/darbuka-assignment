@@ -15,7 +15,10 @@ export const boardExtendedApi = baseApi.injectEndpoints({
       ]
     }),
     createBoard: builder.mutation<Board, BoardCreateInput>({
-      query: (body) => queryDefinitions.createBoard(body),
+      query: (body) => {
+        console.log({ body });
+        return queryDefinitions.createBoard(body);
+      },
       invalidatesTags: ['Board']
     }),
 

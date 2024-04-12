@@ -13,7 +13,8 @@ const useCreateBoard = ({ onSuccess }: { onSuccess?: () => void }) => {
     (values: { name: string; description: string }): void => {
       createBoard({
         description: values.description,
-        name: values.name
+        name: values.name,
+        owner: ''
       });
     },
     [createBoard]

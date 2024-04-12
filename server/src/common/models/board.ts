@@ -8,7 +8,7 @@ export interface Board {
   id: string;
   name: string;
   description: string;
-  owner: string;
+  owner?: string;
   createdAt: Date;
   updatedAt: Date;
   sharedWith?: string[];
@@ -21,7 +21,7 @@ export const boardSchema = new Schema<Board, BoardModelType>(
   {
     name: { type: String, required: true },
     description: { type: String, required: false, default: '' },
-    owner: { type: String, required: false, index: true, default: '' },
+    owner: { type: String, required: false, default: '' },
     sharedWith: { type: [String], default: [] },
     tasks: { type: [taskSchema], default: [] }
   },

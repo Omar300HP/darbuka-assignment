@@ -7,7 +7,9 @@ import {
   Path,
   Put,
   Delete,
-  Body
+  Body,
+  SuccessResponse,
+  Response
 } from 'tsoa';
 import BoardService from './board.service';
 import BoardDAL from '../../DAL/board';
@@ -60,8 +62,13 @@ export class BoardController extends Controller {
   }
 
   @Post()
-  public async createBoard(@Body() body: BoardDTO): Promise<Board> {
-    console.log('newBoard', body);
+  @SuccessResponse('201', 'Created')
+  @Response('409', 'Board already exist found')
+  public async createBoard(
+    @Request() req: any,
+    @Body() body: BoardDTO
+  ): Promise<Board> {
+    console.log('newBoard', { body, req });
     return await this.boardService.createBoard(body);
   }
 
