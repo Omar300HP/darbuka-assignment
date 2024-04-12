@@ -1,6 +1,3 @@
-markdown
-Copy code
-
 # Darbuka Assignment
 
 This repository contains the assignment for Darbuka.
