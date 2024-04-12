@@ -55,7 +55,7 @@ export default class BoardDAL {
   public async createTask(boardId: string, newTask: TaskDTO): Promise<Board> {
     const board = await BoardModel.findByIdAndUpdate(
       { _id: boardId },
-      { $push: { myShares: newTask } },
+      { $push: { tasks: newTask } },
       {
         new: true
       }

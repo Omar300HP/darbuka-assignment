@@ -99,10 +99,10 @@ export class BoardController extends Controller {
   @Post('/{boardId}/tasks')
   public async createTask(
     @Path() boardId: string,
-    @Request() request: any
+    @Request() request: any,
+    @Body() body: TaskDTO
   ): Promise<Board> {
-    const newTask: TaskCreateInput = request.body;
-    return await this.boardService.createTask(boardId, newTask);
+    return await this.boardService.createTask(boardId, body);
   }
 
   @Get('/{boardId}/tasks/{taskId}')

@@ -16,14 +16,14 @@ const useCreateTask = ({
   const [createTask, { isSuccess, isLoading }] = useCreateTaskMutation();
 
   const handleSubmit = useCallback(
-    (values: { boardId: string; description: string; title: string }): void => {
+    (values: { boardId: string; description: string; name: string }): void => {
       createTask({
         boardId: boardId,
         body: {
           description: values.description,
           order: 0,
           status: 'pending',
-          title: values.title,
+          title: values.name,
           assigneeId: '',
           assigneeName: ''
         }

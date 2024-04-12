@@ -7,7 +7,11 @@ export const taskExtendedApi = baseApi.injectEndpoints({
       Task,
       { body: TaskCreateInput; boardId: string }
     >({
-      query: ({ body, boardId }) => queryDefinitions.createTask(boardId, body)
+      query: ({ body, boardId }) => queryDefinitions.createTask(boardId, body),
+      invalidatesTags: (_result, _error, { taskId, boardId }) => [
+        { type: 'Board', id: boardId },
+        { type: 'Task', id: taskId }
+      ]
     }),
 
     getTaskById: builder.query<Task, { taskId: string; boardId: string }>({
@@ -42,7 +46,8 @@ export const taskExtendedApi = baseApi.injectEndpoints({
     >({
       query: ({ taskId, boardId }) =>
         queryDefinitions.deleteTask(boardId, taskId),
-      invalidatesTags: (_result, _error, { taskId }) => [
+      invalidatesTags: (_result, _error, { taskId, boardId }) => [
+        { type: 'Board', id: boardId },
         { type: 'Task', id: taskId }
       ]
     })
