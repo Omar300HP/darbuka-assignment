@@ -80,6 +80,11 @@ const models: TsoaRoute.Models = {
         "type": {"dataType":"intersection","subSchemas":[{"ref":"Omit_BoardCreateInput.tasks-or-owner_"},{"dataType":"nestedObjectLiteral","nestedProperties":{"tasks":{"dataType":"array","array":{"dataType":"refAlias","ref":"TaskDTO"}},"owner":{"dataType":"string"}}}],"validators":{}},
     },
     // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
+    "Partial_TaskDTO_": {
+        "dataType": "refAlias",
+        "type": {"dataType":"nestedObjectLiteral","nestedProperties":{"description":{"dataType":"string"},"title":{"dataType":"string"},"status":{"dataType":"string"},"assigneeId":{"dataType":"string"},"assigneeName":{"dataType":"string"},"order":{"dataType":"double"}},"validators":{}},
+    },
+    // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa
 };
 const templateService = new ExpressTemplateService(models, {"noImplicitAdditionalProperties":"throw-on-extras","bodyCoercion":true});
 
@@ -314,6 +319,7 @@ export function RegisterRoutes(app: Router) {
                     boardId: {"in":"path","name":"boardId","required":true,"dataType":"string"},
                     taskId: {"in":"path","name":"taskId","required":true,"dataType":"string"},
                     request: {"in":"request","name":"request","required":true,"dataType":"object"},
+                    body: {"in":"body","name":"body","required":true,"ref":"Partial_TaskDTO_"},
             };
 
             // WARNING: This file was auto-generated with tsoa. Please do not modify it. Re-run tsoa to re-generate this file: https://github.com/lukeautry/tsoa

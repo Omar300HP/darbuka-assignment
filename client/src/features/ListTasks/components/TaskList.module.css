@@ -1,0 +1,3 @@
+.skeleton :global(.ant-skeleton-avatar) {
+  @apply w-[178px] h-[120px] leading-[120px] rounded-xl  !important;
+}

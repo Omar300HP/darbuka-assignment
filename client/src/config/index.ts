@@ -9,13 +9,13 @@ const config = {
       delete: (boardId: string) => `v1/boards/${boardId}`
     },
     task: {
-      create: (boardId: string) => `v1/boards/${boardId}/task`,
+      create: (boardId: string) => `v1/boards/${boardId}/tasks`,
       getById: (boardId: string, taskId: string) =>
-        `v1/boards/${boardId}/task/${taskId}`,
+        `v1/boards/${boardId}/tasks/${taskId}`,
       update: (boardId: string, taskId: string) =>
-        `v1/boards/${boardId}/task/${taskId}`,
+        `v1/boards/${boardId}/tasks/${taskId}`,
       delete: (boardId: string, taskId: string) =>
-        `v1/boards/${boardId}/task/${taskId}`
+        `v1/boards/${boardId}/tasks/${taskId}`
     }
   }
 } as const;

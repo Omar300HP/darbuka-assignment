@@ -28,8 +28,8 @@ export const taskExtendedApi = baseApi.injectEndpoints({
     >({
       query: ({ taskId, body, boardId }) =>
         queryDefinitions.updateTask(boardId, taskId, body),
-      invalidatesTags: (_result, _error, { taskId }) => [
-        { type: 'Task', id: taskId }
+      invalidatesTags: (_result, _error, { boardId }) => [
+        { type: 'Board', id: boardId }
       ]
     }),
 

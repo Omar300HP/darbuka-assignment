@@ -45,7 +45,7 @@ export default class BoardService {
   public async updateTask(
     boardId: string,
     taskId: string,
-    task: TaskDTO
+    task: Partial<TaskDTO>
   ): Promise<Task> {
     return this.boardDAL.updateTask(boardId, taskId, task);
   }

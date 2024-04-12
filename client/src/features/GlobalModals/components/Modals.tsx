@@ -6,6 +6,7 @@ import { useAppDispatch, useAppSelector } from 'hooks/index';
 import { selectOpenedModal, clearModal } from '../slices';
 import { GlobalModals } from 'types/enums';
 import { NewBoardModal } from 'features/CreateNewBoard';
+import { NewTaskModal } from 'features/CreateNewTask';
 
 const Modals = () => {
   const { pathname } = useLocation();
@@ -13,7 +14,8 @@ const Modals = () => {
 
   const modalsComponents = useRef({
     '': null,
-    [GlobalModals.NEW_BOARD]: NewBoardModal
+    [GlobalModals.NEW_BOARD]: NewBoardModal,
+    [GlobalModals.NEW_TASK]: NewTaskModal
   });
   const modalOpened = useAppSelector(selectOpenedModal);
   const CurrentOpenedModal = modalsComponents.current[modalOpened];

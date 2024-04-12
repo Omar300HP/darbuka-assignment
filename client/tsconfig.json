@@ -32,7 +32,8 @@
       "features/*": ["src/features/*"],
       "config/*": ["src/config/*"],
       "libs/*": ["src/libs/*"],
-      "assets/*": ["src/assets/*"]
+      "assets/*": ["src/assets/*"],
+      "routes/*": ["src/routes/*"]
     }
   },
   "include": ["src", "types/**/*.d.ts"],

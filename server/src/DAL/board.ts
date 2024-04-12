@@ -89,9 +89,21 @@ export default class BoardDAL {
     taskId: string,
     task: Partial<TaskDTO>
   ): Promise<Task> {
+    const fieldsToUpdate = Object.entries(task).reduce((acc, [key, value]) => {
+      if (value) {
+        const newkey: string = String(`tasks.$.${key}`);
+        acc[newkey] = value;
+      }
+
+      return acc;
+    }, {} as any);
+
     let board = await BoardModel.findOneAndUpdate(
       { _id: boardId, 'tasks._id': taskId },
-      { $set: { 'tasks.$': task } },
+      {
+        $set: fieldsToUpdate
+      },
+
       {
         new: true
       }

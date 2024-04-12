@@ -1,4 +1,4 @@
-import appConfig from 'config';
+import appConfig from 'config/index';
 import { axiosBaseQuery } from 'libs/axios';
 
 export const baseQueryFn = axiosBaseQuery({
@@ -18,6 +18,7 @@ export const queryDefinitions = {
     url: appConfig.restApiRoutes.board.list(),
     method: RequestMethods.GET
   }),
+
   createBoard: (reqBody: BoardCreateInput) => {
     console.log({ reqBody });
     return {
@@ -26,10 +27,12 @@ export const queryDefinitions = {
       data: reqBody
     };
   },
+
   getBoardById: (boardId: string) => ({
     url: appConfig.restApiRoutes.board.getById(boardId),
     method: RequestMethods.GET
   }),
+
   updateBoard: (boardId: string, reqBody: Partial<BoardCreateInput>) => ({
     url: appConfig.restApiRoutes.board.update(boardId),
     method: RequestMethods.PUT,

@@ -16,6 +16,7 @@ import BoardDAL from '../../DAL/board';
 import { Board, BoardCreateInput } from '../../common/models/board';
 import { Task, TaskCreateInput } from '../../common/models/task';
 import BoardDTO from './board.dto';
+import TaskDTO from './tasks.dto';
 
 @Route('/v1/boards')
 // @Security("jwt_auth")
@@ -116,9 +117,10 @@ export class BoardController extends Controller {
   public async updateTask(
     @Path() boardId: string,
     @Path() taskId: string,
-    @Request() request: any
+    @Request() request: any,
+    @Body() body: Partial<TaskDTO>
   ): Promise<Task> {
-    return await this.boardService.updateTask(boardId, taskId, request.body);
+    return await this.boardService.updateTask(boardId, taskId, body);
   }
 
   @Delete('/{boardId}/tasks/{taskId}')

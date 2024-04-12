@@ -2,7 +2,7 @@ interface Task {
   id: string;
   title: string;
   description: string;
-  status: string;
+  status: 'pending' | 'completed';
   createdAt: Date;
   updatedAt: Date;
   assigneeId?: string;

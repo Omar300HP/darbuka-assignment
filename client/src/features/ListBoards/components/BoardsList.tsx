@@ -27,6 +27,7 @@ const BoardsList: React.FC = () => {
             key={board.id}
             description={board.description}
             name={board.name}
+            boardId={board.id}
           />
         ))
       )}

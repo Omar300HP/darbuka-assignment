@@ -26,7 +26,7 @@ export const taskSchema = new Schema<Task, TaskModelType>(
   {
     title: { type: String, required: true },
     description: { type: String, required: false, default: '' },
-    status: { type: String, required: true, enum: Status },
+    status: { type: String, required: true },
     order: { type: Number, required: true },
     assigneeId: { type: String, required: false, default: '' },
     assigneeName: { type: String, required: false, default: '' }

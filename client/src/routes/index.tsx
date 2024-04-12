@@ -1,3 +1,4 @@
+import Board from 'pages/Board';
 import ErrorPage from '../pages/Error';
 import Home from '../pages/Home';
 
@@ -5,17 +6,17 @@ import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
 export const routes = {
   home: { path: '/', nav: () => '/', element: <Home /> },
-  login: { path: '/login', nav: () => '/login', element: <Home /> },
+  // login: { path: '/login', nav: () => '/login', element: <Home /> },
   board: {
     path: '/board/:boardId',
     nav: (boardId: string) => `/board/${boardId}`,
-    element: <Home />
+    element: <Board />
   },
   task: {
     path: '/board/:boardId/task/:taskId',
     nav: (boardId: string, taskId: string) =>
       `/board/${boardId}/task/${taskId}`,
-    element: <Home />
+    element: <Board />
   },
   notFound: { path: '*', nav: () => '*', element: <ErrorPage /> }
 } as const;
