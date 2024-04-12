@@ -1,5 +1,5 @@
-import ErrorPage from 'pages/Error';
-import Home from 'pages/Home';
+import ErrorPage from '../pages/Error';
+import Home from '../pages/Home';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -21,7 +21,7 @@ export const routes = {
 } as const;
 
 const Router: React.FC<{ children?: React.ReactNode }> = ({ children }) => (
-  <BrowserRouter>
+  <BrowserRouter basename="/">
     <Routes>
       {Object.values(routes).map(({ path, element }) => (
         <Route key={path} path={path} element={element} />
